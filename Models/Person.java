@@ -1,7 +1,5 @@
-package Model;
-
-public class Person {
-
+package Models;
+public abstract class Person {
     private String nama;
 
     public void showProfile(){
