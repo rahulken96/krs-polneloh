@@ -9,6 +9,6 @@ package Tests;
  *
  * @author Ghost
  */
-public class MainTest {
+public class KRSTest {
     
 }

@@ -27,16 +27,16 @@ public class Dosen extends Person {
     }
 
     public String setNidn(String nidn){
-        boolean bukanHuruf;
+        boolean mengandungHuruf;
         try {
             int angka = Integer.parseInt(nidn);
-            bukanHuruf = true;
+            mengandungHuruf = false;
         } 
         catch (Exception e) {
-            bukanHuruf = false;
+            mengandungHuruf = true;
         }
         
-        if(nidn.equals("")){
+        if(nidn.equals("")||nidn.isEmpty()){
             return "NIDN tidak boleh kosong!";
         }
         
@@ -44,7 +44,7 @@ public class Dosen extends Person {
             return "Panjang NIDN harus 7!";
         }
 
-        if(!bukanHuruf){
+        if(mengandungHuruf){
             return "NIDN harus berisi angka!";
         }
 

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Models;
 
 import Models.Person;
@@ -22,7 +17,6 @@ public class Mahasiswa extends Person{
         person.setNama(nama);
     }
     
-   
 
     public void cetakKRS(){
         System.out.print("");
@@ -30,25 +24,24 @@ public class Mahasiswa extends Person{
 
     public String setNim(String nim){
         
-         
+        boolean mengandungHuruf;
+        try {
+            int angka = Integer.parseInt(nim);
+            mengandungHuruf = false;
+        } 
+        catch (Exception e) {
+           mengandungHuruf = true;
+        }
+        
         if (nim.length()!=7){
             return "Panjang NIM harus 7!";
         }
         
-        boolean bukanHuruf;
-        try {
-            int angka = Integer.parseInt(nim);
-            bukanHuruf = true;
-        } 
-        catch (Exception e) {
-            bukanHuruf = false;
-        }
-        
-        if(nim.equals("") || nim == null){
+        if(nim.equals("")||nim.isEmpty()){
             return "NIM tidak boleh kosong!";
         }
        
-        if(!bukanHuruf){
+        if(mengandungHuruf){
             return "NIM harus berisi angka!";
         }
 

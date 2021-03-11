@@ -1,5 +1,7 @@
 package Tests;
+
 import Models.Mahasiswa;
+
 public class MahasiswaTest {
     public static void main(String [] args){
         Mahasiswa mhs = new Mahasiswa();
